@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>16th Century</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <style>
+	body {
+		background-image: url("https://img00.deviantart.net/70f1/i/2008/043/f/2/tennis_court___blue_by_zardos_demon.png");
+		/* Full height */
+		height: 100%; 
+		/* Center and scale the image nicely */
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+    .page-content {
+      margin-left: 150px;
+    }
+    .card-square {
+      width: 760px;
+      height: 400px;
+      margin-left: 20px;
+      margin-top: 20px;
+      float: left;
+	  background-color: white;
+    }
+    .mdc-card__media {
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 150%;
+	  width: 150%;
+	  object-fit: 'contain'
+    }
+	.mdc-card__supporting-text{
+		background-color: white;
+	}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/babel">
+	//https://www.whatswithtech.com/wp-content/uploads/2015/09/new-material-design-wallpaper-chrome.jpg
+      var obj = [
+        {name: "Fact1", description: "In 1540, King Francis I appointed Sebastiano Serlio as the chief architectural designer who designed the Louvre Jeu à Dedans court, a tennis court built for pleasure and luxury of the elite, far from the sight of common public.", url: "./Century16/pic1.jpg"},
+		{name: "Fact2", description: 'The racquets came into use, and the game began to be called "tennis." It was popular in England and France and Henry VIII of England was a big fan of the game. Anne Boleyn, the queen of England from 1533 to 1536 was watching tennis when she was arrested  for treason on the 2nd May 1536. The handles became longer, the head was smaller and gut strings were passed through the racquet.They were frames made of wood with gut strung through them. Gut is a chord derived from the natural fibers of the intestinal walls of animals. The rackets had long handles and a tiny head shaped like a tear drop. ', url: ""},
+		{name: "Fact3", description: "", url: "./Century16/pic2.jpg"},
+		{name: "Fact4", description: "Tennis may have originated as early as the 10th or 11th centuries. Henry VII is known to have played and his son, Henry VIII, built a court at Hampton Court Palace in 1520. From Look and Learn Book 1976.", url: "./Century16/pic3.jpg"}
+	  ];
+      var Projects = React.createClass({
+        render: function() {
+          return (
+            <div className='page-content home-content'>
+              {
+                (this.props.projects).map(function(project, index) {
+                  return <Project
+                    key={index}
+                    name={project.name}
+                    description={project.description}
+					url={project.url}
+                  />
+                })
+              }
+            </div>
+          );
+        }
+      });
+
+      var Project = React.createClass({
+        render: function() {
+          return (
+            <div className='mdc-card card-square'>
+              <section className='mdc-card__media' style={{background: "url('"+this.props.url+"')"}}></section>
+              <section className='mdc-card__supporting-text'>
+                {this.props.description}
+              </section>
+              
+            </div>
+          );
+        }
+      });
+
+      var projects = [];
+      var x;
+      for (x in obj) {
+        console.log(obj[x]);
+        projects.push(obj[x]);
+        ReactDOM.render(
+          <Projects projects={projects} />,
+          document.getElementById("content")
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  	  <header class="mdl-layout__header">
+  		<div class="mdl-layout__header-row" style="opacity:1">
+  		  <!-- Title -->
+  		  <span class="mdl-layout-title"><a class="mdl-navigation__link" href="./home.html">The Evolution of the Tennis Racquet</a></span>
+  		  <!-- Add spacer, to align navigation to the right -->
+  		  <div class="mdl-layout-spacer"></div>
+  		  <!-- Navigation. We hide it in small screens. -->
+  		  <nav class="mdl-navigation mdl-layout--large-screen-only">
+          Centuries:
+    	  <a class="mdl-navigation__link" href="./page12.html">12th</a>
+    	  <a class="mdl-navigation__link" href="./page13.html">13th</a>
+		  <a class="mdl-navigation__link" href="./page14.html">14th</a>
+		  <a class="mdl-navigation__link" href="./page15.html">15th</a>
+		  <a class="mdl-navigation__link" href="./page16.html">16th</a>
+		  <a class="mdl-navigation__link" href="./page17.html">17th</a>
+		  <a class="mdl-navigation__link" href="./page18.html">18th</a>
+		  <a class="mdl-navigation__link" href="./page19.html">19th</a>
+		  <a class="mdl-navigation__link" href="./page20.html">20th</a>
+		  <a class="mdl-navigation__link" href="./page21.html">21st</a>
+  		  </nav>
+  		</div>
+  	  </header>
+  	  <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+  		<span class="mdl-layout-title">Links</span>
+  		<nav class="mdl-navigation">
+  		  <a class="mdl-navigation__link" href="./page12.html">12th</a>
+    	  <a class="mdl-navigation__link" href="./page13.html">13th</a>
+		  <a class="mdl-navigation__link" href="./page14.html">14th</a>
+		  <a class="mdl-navigation__link" href="./page15.html">15th</a>
+		  <a class="mdl-navigation__link" href="./page16.html">16th</a>
+		  <a class="mdl-navigation__link" href="./page17.html">17th</a>
+		  <a class="mdl-navigation__link" href="./page18.html">18th</a>
+		  <a class="mdl-navigation__link" href="./page19.html">19th</a>
+		  <a class="mdl-navigation__link" href="./page20.html">20th</a>
+		  <a class="mdl-navigation__link" href="./page21.html">21st</a>
+  		</nav>
+  	  </div>
+  	  <main id="content" class="mdl-layout__content">
+  	  </main>
+  	</div>
+	</body>
+</html>
